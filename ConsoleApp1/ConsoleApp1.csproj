@@ -9,7 +9,9 @@
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
-
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="true" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="CommandLineParser" Version="2.4.3" />
