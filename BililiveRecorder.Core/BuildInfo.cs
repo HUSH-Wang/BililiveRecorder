@@ -1,6 +1,6 @@
 namespace BililiveRecorder.Core
 {
-    internal class BuildInfo
+    internal class BuildInfo2
     {
         internal const bool Appveyor = false;
         internal const string Version = @"本地编译";
