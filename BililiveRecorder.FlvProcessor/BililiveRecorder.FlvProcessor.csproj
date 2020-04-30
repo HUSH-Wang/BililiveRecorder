@@ -20,6 +20,9 @@
     <Compile Include="..\TempBuildInfo\BuildInfo.FlvProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="true" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="NLog" Version="4.5.10" />
   </ItemGroup>
