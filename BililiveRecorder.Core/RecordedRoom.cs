@@ -296,8 +296,7 @@ namespace BililiveRecorder.Core
                             },
                             {
                                 "version",
-                                "1.5"
-                                //BuildInfo.Version + " " + BuildInfo.HeadShaShort
+                                BuildInfo.Version + " " + BuildInfo.HeadShaShort
                             },
                             {
                                 "roomid",
@@ -311,7 +310,7 @@ namespace BililiveRecorder.Core
                     };
 
                     _stream = await _response.Content.ReadAsStreamAsync();
-                    //_stream.ReadTimeout = 3 * 1000;
+                    _stream.ReadTimeout = 3 * 1000;
 
                     StreamDownloadTask = Task.Run(_ReadStreamLoop);
                     TriggerPropertyChanged(nameof(IsRecording));
@@ -473,6 +472,9 @@ namespace BililiveRecorder.Core
         {
             DirectoryInfo di_p = new DirectoryInfo(parent);
             DirectoryInfo di_c = new DirectoryInfo(child);
+
+            if (di_c.FullName == di_p.FullName)
+                return true;
 
             bool isParent = false;
             while (di_c.Parent != null)
